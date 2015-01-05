@@ -91,6 +91,14 @@ function setup_localrc {
         echo "Q_DVR_MODE=dvr_snat" >>"$localrc_file"
     fi
 
+    if [[ "$DEVSTACK_GATE_NEUTRON_OPENDAYLIGHT" -eq "1" ]]; then
+        echo "Q_PLUGIN=ml2" >>"$localrc_file"
+        echo "Q_ML2_PLUGIN_MECHANISM_DRIVERS=logger,opendaylight" >>"$localrc_file"
+        echo "ODL_MGR_IP=\$SERVICE_HOST" >>"$localrc_file"
+        echo "ODL_BOOT_WAIT=15" >>"$localrc_file"
+        echo "ENABLE_TENANT_TUNNELS=True" >>"$localrc_file"
+    fi
+
     cat <<EOF >>"$localrc_file"
 USE_SCREEN=False
 DEST=$BASE/$localrc_oldnew

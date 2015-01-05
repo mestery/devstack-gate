@@ -187,6 +187,9 @@ export DEVSTACK_GATE_NEUTRON=${DEVSTACK_GATE_NEUTRON:-0}
 # Set to 1 to run neutron distributed virtual routing
 export DEVSTACK_GATE_NEUTRON_DVR=${DEVSTACK_GATE_NEUTRON_DVR:-0}
 
+# Set to 1 to run neutron with OpenDaylight
+export DEVSTACK_GATE_NEUTRON_OPENDAYLIGHT=${DEVSTACK_GATE_NEUTRON_OPENDAYLIGHT:-0}
+
 # Set to 1 to run nova in cells mode instead of the default mode
 export DEVSTACK_GATE_CELLS=${DEVSTACK_GATE_CELLS:-0}
 
